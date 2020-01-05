@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>mode-selector</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../static/css/ionicons.min.css" th:href="@{/css/ionicons.min.css}"/>
+    <link rel="stylesheet" href="../static/css/Article-List.css" th:href="@{/css/Article-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Bootstrap-4---Product-List.css"
+          th:href="@{/css/Bootstrap-4---Product-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Login-Form-Dark.css" th:href="@{/css/Login-Form-Dark.css}"
+          type="text/css">
+    <link rel="stylesheet" href="../static/css/Team-Boxed.css" th:href="@{/css/Team-Boxed.css}" type="text/css">
+</head>
+
+<body>
+<div class="article-list">
+    <div class="container" style="background-position: right;background-size: cover;">
+        <div class="intro">
+            <h2 class="text-center">Active games</h2>
+        </div>
+        <div th:each="g:${activeGames}" class="row articles" style="height: 150px;">
+            <div class="col-sm-6 col-md-4 item" style="padding-top: 0;height: 150px;">
+                <h3 class="name" th:text="${g.mode}"></h3>
+                <p class="description" style="color: rgb(6,49,75);font-size: 14px;">Dive in!</p>
+                <form method="get" th:action="@{|/games/${g.id}|}">
+                    <button class="btn btn-primary" type="submit"
+                            style="color: rgb(255,255,255);background-color: rgb(33,74,128);width: 50%;margin-top: 6px;">
+                        Enter lobby
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

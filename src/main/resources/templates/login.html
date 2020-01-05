@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>mode-selector</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../static/css/ionicons.min.css" th:href="@{/css/ionicons.min.css}"/>
+    <link rel="stylesheet" href="../static/css/Article-List.css" th:href="@{/css/Article-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Bootstrap-4---Product-List.css"
+          th:href="@{/css/Bootstrap-4---Product-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Login-Form-Dark.css" th:href="@{/css/Login-Form-Dark.css}"
+          type="text/css">
+    <link rel="stylesheet" href="../static/css/Team-Boxed.css" th:href="@{/css/Team-Boxed.css}" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="login-dark">
+    <form th:action="@{/login}" method="POST">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="form-group"><input class="form-control" id="login" type="text" name="login" placeholder="Name"
+                                       th:placeholder="login"></div>
+        <div class="form-group"><input class="form-control" id="password" type="password" name="password"
+                                       placeholder="Password" th:placeholder="password"></div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" name="Submit" value="Log in" type="Submit"
+                    th:text="Login"></button>
+        </div>
+        <div align="center" th:if="${param.error}">
+            <p th:text="${param.login}"></p>
+            <p style="font-size: 20; color: #FF1C19;">Login or Password invalid, please verify</p>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

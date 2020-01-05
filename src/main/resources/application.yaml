@@ -1,2 +1,6 @@
 server:
   port: 8080
+users:
+  first: artem
+  second: nikita
+  admin: admin

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>mode-selector</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../static/css/ionicons.min.css" th:href="@{/css/ionicons.min.css}"/>
+    <link rel="stylesheet" href="../static/css/Article-List.css" th:href="@{/css/Article-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Bootstrap-4---Product-List.css"
+          th:href="@{/css/Bootstrap-4---Product-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Login-Form-Dark.css" th:href="@{/css/Login-Form-Dark.css}"
+          type="text/css">
+    <link rel="stylesheet" href="../static/css/Team-Boxed.css" th:href="@{/css/Team-Boxed.css}" type="text/css">
+</head>
+
+<body>
+<div class="team-boxed">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Select winner</h2>
+        </div>
+        <div class="row people" style="padding-bottom: 20px;padding-top: 0;">
+            <div class="col-md-6 col-lg-4 item" style="background-color: #c80404;">
+                <div class="box" style="background-color: #ffffff;filter: blur(0px) brightness(100%);">
+                    <img class="rounded-circle" th:src="@{|/img/${artem}.gif|}">
+                    <h3 class="name">Артемчик</h3>
+                    <p class="title" th:text="${artem}"></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item" style="background-color: #2824ee;">
+                <div class="box">
+                    <img class="rounded-circle" th:src="@{|/img/${nikita}.gif|}">
+                    <h3 class="name">Никитчик</h3>
+                    <p class="title" th:text="${nikita}"></p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form method="get" th:action="@{/reset}">
+                <button class="btn btn-primary" type="submit"
+                        style="padding-bottom: 6px;margin-bottom: 9px;margin-left: 25%;background-color: rgb(33,74,128);width: 50%;">
+                    Reset
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

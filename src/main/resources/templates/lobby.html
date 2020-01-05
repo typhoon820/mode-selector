@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>mode-selector</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../static/css/ionicons.min.css" th:href="@{/css/ionicons.min.css}"/>
+    <link rel="stylesheet" href="../static/css/Article-List.css" th:href="@{/css/Article-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Bootstrap-4---Product-List.css"
+          th:href="@{/css/Bootstrap-4---Product-List.css}" type="text/css">
+    <link rel="stylesheet" href="../static/css/Login-Form-Dark.css" th:href="@{/css/Login-Form-Dark.css}"
+          type="text/css">
+    <link rel="stylesheet" href="../static/css/Team-Boxed.css" th:href="@{/css/Team-Boxed.css}" type="text/css">
+</head>
+
+<body style="height: 100%;background-size: auto;background: rgb(220,216,194) url(../static/img/Scroll_PNG_Clipart.png) no-repeat center;">
+<div>
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center" th:text="${game.mode}"></h2>
+        </div>
+        <div class="row" th:each="r:${races}">
+            <div class="col-md-3">
+                <a th:href="@{|/games/${game.id}/select/${r}|}" style="margin-left: 39%;">
+                    <img class="rounded-circle" th:src="@{|/img/${r}.gif|}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
